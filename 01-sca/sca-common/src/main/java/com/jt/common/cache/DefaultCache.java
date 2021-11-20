@@ -4,5 +4,5 @@ package com.jt.common.cache;
 
 //@Component
 public class DefaultCache {
-
+    
 }
