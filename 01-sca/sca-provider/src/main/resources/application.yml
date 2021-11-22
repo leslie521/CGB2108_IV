@@ -1,0 +1,9 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: sca-provider  #服务名，单词之间不能用下划线“_”
+  cloud:
+    nacos:
+      discovery: #配置服务注册，发现地址
+        server-addr: localhost:8848

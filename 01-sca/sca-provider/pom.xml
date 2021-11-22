@@ -17,6 +17,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--基于nacos实现服务注册和发现的依赖，当添加此依赖后，项目启动时，
+        会有相关对象nacos发送消息(心跳包),实现服务的注册-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.jt</groupId>
             <artifactId>sca-common</artifactId>
