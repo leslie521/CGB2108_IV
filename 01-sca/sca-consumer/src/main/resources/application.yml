@@ -7,3 +7,14 @@ spring:
     nacos:
       discovery:  #配置服务注册，发现地址
         server-addr: localhost:8848 #从哪里去查找服务
+
+#客户端负载均衡
+#sca-provider: #要访问的服务名(这个服务名可能对应着多个服务实例)
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载均衡算法
+
+#启动feign方式调用时的服务中断处理机制.
+feign:
+  hystrix:
+    enabled: true #默认值为false
+
