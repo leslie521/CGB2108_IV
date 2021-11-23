@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01-sca/01-sca.iml" filepath="$PROJECT_DIR$/01-sca/01-sca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-sca/sca-common/sca-common.iml" filepath="$PROJECT_DIR$/01-sca/sca-common/sca-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-sca/sca-consumer/sca-consumer.iml" filepath="$PROJECT_DIR$/01-sca/sca-consumer/sca-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-sca/sca-gateway/sca-gateway.iml" filepath="$PROJECT_DIR$/01-sca/sca-gateway/sca-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-sca/sca-provider/sca-provider.iml" filepath="$PROJECT_DIR$/01-sca/sca-provider/sca-provider.iml" />
+    </modules>
+  </component>
+</project>

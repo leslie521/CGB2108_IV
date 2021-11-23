@@ -32,18 +32,19 @@ public class ConsumerController {
      * @return
      * 访问此方法的url: http://localhost:8090/consumer/doRestEcho1
      */
-//    @GetMapping("/consumer/toRestEcho01")
-//    public String toRestEcho1(){
-//        //1.定义要调用的远端服务的url
-//        String url = "http://localhost:8081/provider/echo/8090";
-//        //2.基于restTemplate对象中的相关方法进行服务调用
-//        return restTemplate.getForObject(url, String.class);
-//    }
+    @GetMapping("/consumer/toRestEcho01")
+    public String toRestEcho1(){
+        //1.定义要调用的远端服务的url
+        String url = "http://localhost:8081/provider/echo/8090";
+        //2.基于restTemplate对象中的相关方法进行服务调用
+        return restTemplate.getForObject(url, String.class);
+    }
 
     @GetMapping("/consumer/doRestEcho02")
     public String doRestEcho02(){
         ServiceInstance serviceInstance = loadBalancerClient.choose("sca-provider");
-        String url = String.format("http://%s:%s/provider/echo/$s", serviceInstance.getHost(),serviceInstance.getPort(),appName);
+        String url = String.format("http://%s:%s/provider/echo/$s",
+                serviceInstance.getHost(),serviceInstance.getPort(),appName);
         System.out.println("request url:"+url);
         return restTemplate.getForObject(url,String.class);
     }
