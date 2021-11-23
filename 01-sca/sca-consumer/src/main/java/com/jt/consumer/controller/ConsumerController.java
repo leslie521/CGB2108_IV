@@ -77,7 +77,7 @@ public class ConsumerController {
     @GetMapping("/consumer/doRestEcho03")
     public String doRestEcho03() {
         String serviceName = "sca-provider";
-        //2.基于服务实例构建要访问的服务的url
+        //1.此请求会被一个拦截器拦截下来，请求被拦截到以后就会先基于服务名找到服务实例(负载均衡)。
         String url = String.format("http://%s/provider/echo/{msg}", serviceName);
         return loadBalancedRestTemplate.getForObject(url, String.class,appName);
         //这里的appName是传给了url中的{msg},这是rest风格的一种写法
