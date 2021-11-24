@@ -18,7 +18,8 @@ public class ProviderController {
     //http://localhost:8081/provider/echo/tedu
     @GetMapping("/provider/echo/{msg}")
     public String doRestEcho1(@PathVariable String msg) throws InterruptedException {
-        Thread.sleep(500000);
+        //模拟耗时操作
+        Thread.sleep(5000);
         return server + " say:hello " + msg;
     }
 }

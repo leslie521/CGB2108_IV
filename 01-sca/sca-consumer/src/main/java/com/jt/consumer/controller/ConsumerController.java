@@ -30,7 +30,7 @@ public class ConsumerController {
      */
     //打开浏览器
     //访问:http://localhost:8090/consumer/doRestEcho1
-    @GetMapping("/consumer/toRestEcho01")
+    @GetMapping("/consumer/toRestEcho1")
     public String toRestEcho1(){
         //1.定义要调用的远端服务的url
         String url = "http://localhost:8081/provider/echo/8090";
@@ -50,8 +50,8 @@ public class ConsumerController {
 
     //Consumer-->Provider
     //访问http://localhost:8090/consumer/doRestEcho2
-    @GetMapping("/consumer/doRestEcho02")
-    public String doRestEcho02(){
+    @GetMapping("/consumer/toRestEcho2")
+    public String toRestEcho02(){
         //1.基于服务名获取服务实例
         ServiceInstance serviceInstance = loadBalancerClient.choose("sca-provider");
         //2.基于服务实例构建要访问的服务的url
@@ -74,8 +74,8 @@ public class ConsumerController {
     //@Qualifier("loadBalancedRestTemplate")
     private RestTemplate loadBalancedRestTemplate;
 
-    @GetMapping("/consumer/doRestEcho03")
-    public String doRestEcho03() {
+    @GetMapping("/consumer/toRestEcho3")
+    public String toRestEcho03() {
         String serviceName = "sca-provider";
         //1.此请求会被一个拦截器拦截下来，请求被拦截到以后就会先基于服务名找到服务实例(负载均衡)。
         String url = String.format("http://%s/provider/echo/{msg}", serviceName);

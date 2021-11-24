@@ -1,0 +1,8 @@
+###
+GET http://localhost:8090/consumer/toRestEcho01
+
+###
+GET http://localhost:8090/consumer/toRestEcho02
+
+###
+GET http://localhost:8090/consumer/toRestEcho03
