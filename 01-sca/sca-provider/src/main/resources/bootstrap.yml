@@ -1,0 +1,15 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: sca-provider  #服务名，单词之间不能用下划线“_”
+  cloud:
+    nacos:
+      discovery: #配置服务注册，发现地址
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml # Configure the data format of the content, default to properties
+logging:
+  level:
+    com.jt: info

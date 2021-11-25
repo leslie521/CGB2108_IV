@@ -25,6 +25,10 @@ public class TestArgs {
         System.out.println("-----------十进制数----------");
         System.out.println(num);
 
+//        Integer.TYPE;
+//        int.class;
+//        Integer.class;
+
     }
 
     private void printInfo(int num) {
