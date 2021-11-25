@@ -23,7 +23,8 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-
+        <!--nacos 配置中心依赖，当添加了此依赖后，系统会为我们注入一些API对象，基于这些
+                对象可以读取配置中心的数据，同时要求项目中的配置文件必须为bootstrap.yml-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>

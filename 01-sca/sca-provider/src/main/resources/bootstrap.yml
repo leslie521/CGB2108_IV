@@ -10,6 +10,11 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yml # Configure the data format of the content, default to properties
-logging:
-  level:
-    com.jt: info
+        namespace: f8a7c850-50e3-4b2b-941f-6c040ae4c3a3
+        group: DEFAULT_GROUP_1111
+        shared-configs[0]:
+          data-Id: app-public.yml
+          refresh: true
+#logging:
+#  level:
+#    com.jt: info

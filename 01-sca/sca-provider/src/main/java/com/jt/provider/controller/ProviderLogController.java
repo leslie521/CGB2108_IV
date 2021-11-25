@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
  * 在这个controller中我们会基于日志对象
  * 进行日志输出测试.
  */
+/**
+ * @Slf4j 注解描述类会在类中自动创建一个org.slf4j.Logger对象。
+ * @RefreshScope 注解描述类时，会在配置中心数据发生变化后，再次访问此注解描述的对象，
+ * 会重新构建对象，初始化属性。
+ */
 @RefreshScope
 @Slf4j
 @RestController
@@ -44,7 +49,7 @@ public class ProviderLogController {
     }
 
     @Value("${logging.level.com.jt:info}")
-    private LogLevel logLevel;
+    private LogLevel logLevel;//构建对象时属性进行初始化
 
     @GetMapping("/provider/log/doLog02")
     public String doLog02(){
