@@ -15,6 +15,9 @@ spring:
         shared-configs[0]:
           data-Id: app-public.yml
           refresh: true
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8180 # 指定sentinel控制台地址。
 #logging:
 #  level:
 #    com.jt: info
