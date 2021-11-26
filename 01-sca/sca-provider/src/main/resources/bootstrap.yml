@@ -18,6 +18,7 @@ spring:
     sentinel:
       transport:
         dashboard: 127.0.0.1:8180 # 指定sentinel控制台地址。
+      web-context-unify: false
 #logging:
 #  level:
 #    com.jt: info
