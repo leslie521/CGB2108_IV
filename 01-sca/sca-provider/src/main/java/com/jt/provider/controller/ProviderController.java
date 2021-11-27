@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**定义Controller对象(这个对象在spring mvc中给他的定义是handler),
- * 基于此对象处理客户端的请求*/
+ * 基于此对象处理客户端的请求  此对象要对外提供一些访问服务*/
 @RestController
 public class ProviderController {
 

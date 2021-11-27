@@ -29,12 +29,14 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-
+        <!--添加sentinel依赖，此依赖添加以后，会在我们的项目中添加一个拦截器，这个拦截
+                器会指定请求进行拦截，然后检测你的请求是否在限流范围之内，假如在这个范围之内就会
+                对请求进行限流操作-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-
+        <!--添加sca-common依赖-->
         <dependency>
             <groupId>com.jt</groupId>
             <artifactId>sca-common</artifactId>
