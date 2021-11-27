@@ -1,12 +1,13 @@
 package com.jt.provider.controller;
 
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.jt.provider.service.ResourceBlockHandle;
 import com.jt.provider.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping("/provider")
@@ -29,5 +30,16 @@ public class ProviderSentinelController {
     public String doSentinel03(){
         String message = resourceService.doGetResource();
         return message;
+    }
+
+    private AtomicInteger atomicInteger = new AtomicInteger(1);
+    @GetMapping("/sentinel04")
+    public String doSentinel04() throws InterruptedException {
+        int num = atomicInteger.getAndIncrement();
+        if (num%2 == 0){
+            Thread.sleep(300);
+            //num/=0;
+        }
+        return "test sentinel04 ...";
     }
 }
