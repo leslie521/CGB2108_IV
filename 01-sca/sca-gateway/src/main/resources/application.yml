@@ -1,0 +1,29 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: sca-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启通过服务注册中心的serviceId创建路由
+      routes: #配置网关路由规则
+        - id: route01  #路由id,自己指定一个唯一值即可
+          #uri: http://localhost:8081/ #网关帮我们转发的url
+          uri: lb://sca-provider # lb为服务前缀（负载均衡单词的缩写），不能随意写
+          predicates: ###断言(谓词):匹配请求规则
+            - Path=/nacos/provider/echo/**  #请求路径定义,此路径对应uri中的资源
+          filters: ##网关过滤器,用于对谓词中的内容进行判断分析以及处理
+            - StripPrefix=1 #转发之前去掉path中第一层路径，例如nacos
+    sentinel:
+      transport:
+        dashboard: localhost:8180 #Sentinel 控制台地址
+      eager: true #取消Sentinel控制台懒加载,即项目启动即连接
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
