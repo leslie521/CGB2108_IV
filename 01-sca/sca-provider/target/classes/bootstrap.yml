@@ -1,0 +1,24 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: sca-provider  #服务名，单词之间不能用下划线“_”
+  cloud:
+    nacos:
+      discovery: #配置服务注册，发现地址
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml # Configure the data format of the content, default to properties
+        namespace: f8a7c850-50e3-4b2b-941f-6c040ae4c3a3
+        group: DEFAULT_GROUP_1111
+        shared-configs[0]: #共享配置，这里0表示下标
+          data-Id: app-public.yml
+          refresh: true # true表示在共享配置更新时，引用此共享配置的地方能够同步更新
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8180 # 指定sentinel控制台地址。
+      web-context-unify: false #链路不执行sentinel默认聚集
+#logging:
+#  level:
+#    com.jt: info

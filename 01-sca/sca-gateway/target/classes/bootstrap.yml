@@ -1,0 +1,39 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: sca-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yml # Configure the data format of the content, default to properties
+    sentinel:
+      transport:
+        dashboard: localhost:8180 #Sentinel 控制台地址
+      eager: true #取消Sentinel控制台懒加载,即项目启动即连接,可以在sentinel面板看到我们的服务信息(可选)
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启通过服务注册中心的serviceId创建路由
+      routes: #配置网关路由规则
+        - id: route01  #路由id,自己指定一个唯一值即可,
+          #uri: http://localhost:8081/ #网关帮我们转发的url
+          uri: lb://sca-provider #底层启动了全局过滤器(GlobalFilter)，在过滤器内部使用Ribbon实现负载均衡
+          predicates: ###断言(谓词):匹配请求规则;http://localhost:9000/nacos/provider/echo/9000
+            - Path=/nacos/provider/echo/**  #请求路径定义,此路径对应uri中的资源
+          #            - After=2021-11-20T23:59:59.789+08:00[Asia/Shanghai]
+          #            - Header=X-Request-Id, \d+
+          #            - Method=GET
+          filters: ##网关过滤器(GatewayFilter),用于对谓词中的内容进行判断分析以及处理
+            - StripPrefix=1 #转发之前去掉path中第一层路径，例如nacos
+
+#sca-provider: #要访问的服务名(这个服务名可能对应着多个服务实例)
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #负载均衡算法
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+
