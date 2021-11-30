@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   application:
     name: sca-provider  #服务名，单词之间不能用下划线“_”
