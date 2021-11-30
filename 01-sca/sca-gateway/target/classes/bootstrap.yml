@@ -18,6 +18,13 @@ spring:
       discovery:
         locator:
           enabled: true #开启通过服务注册中心的serviceId创建路由
+      globalcors:
+        cors-Configurations: #跨域配置
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            allowCredentials: true
       routes: #配置网关路由规则
         - id: route01  #路由id,自己指定一个唯一值即可,
           #uri: http://localhost:8081/ #网关帮我们转发的url

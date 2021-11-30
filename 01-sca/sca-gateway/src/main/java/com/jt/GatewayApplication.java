@@ -34,8 +34,8 @@ public class GatewayApplication {
                 @Override
                 public Mono<ServerResponse> handleRequest(ServerWebExchange serverWebExchange, Throwable throwable) {
                     Map<String,Object> map=new HashMap<>();
-                    map.put("state",429);
-                    map.put("message","two many request");
+                    map.put("status",429);
+                    map.put("message","访问请求太频繁，请3s后重试！！！");
                     String jsonStr= JSON.toJSONString(map);
                     return ServerResponse.ok().body(Mono.just(jsonStr),String.class);
                 }

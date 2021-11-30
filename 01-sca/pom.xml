@@ -15,6 +15,7 @@
         <module>sca-consumer</module>
         <module>sca-gateway</module>
         <module>sca-common</module>
+        <module>sca-ui</module>
     </modules>
 
     <!--有的同学在创建maven工程时,可能会有如下有两句话,这两句话用于指定

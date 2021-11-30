@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/01-sca/pom.xml" />
+        <option value="$PROJECT_DIR$/02-sso/pom.xml" />
       </list>
     </option>
   </component>

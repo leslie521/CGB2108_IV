@@ -7,18 +7,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sca-gateway" />
-        <module name="sca-consumer" />
         <module name="sca-provider" />
         <module name="sca-common" />
+        <module name="sca-consumer" />
+        <module name="sca-ui" />
+        <module name="sso-auth" />
+        <module name="sso-gateway" />
+        <module name="sso-ui" />
+        <module name="sca-gateway" />
+        <module name="sso-resource" />
+        <module name="sso-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="01-sca" target="8" />
+      <module name="02-sso" target="1.5" />
       <module name="sca-common" target="8" />
       <module name="sca-consumer" target="8" />
       <module name="sca-gateway" target="8" />
       <module name="sca-provider" target="8" />
+      <module name="sca-ui" target="8" />
+      <module name="sso-auth" target="1.5" />
+      <module name="sso-gateway" target="1.5" />
+      <module name="sso-resource" target="1.5" />
+      <module name="sso-system" target="1.5" />
+      <module name="sso-ui" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

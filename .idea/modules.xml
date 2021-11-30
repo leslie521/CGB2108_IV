@@ -3,10 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/01-sca/01-sca.iml" filepath="$PROJECT_DIR$/01-sca/01-sca.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/02-sso.iml" filepath="$PROJECT_DIR$/02-sso/02-sso.iml" />
       <module fileurl="file://$PROJECT_DIR$/01-sca/sca-common/sca-common.iml" filepath="$PROJECT_DIR$/01-sca/sca-common/sca-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/01-sca/sca-consumer/sca-consumer.iml" filepath="$PROJECT_DIR$/01-sca/sca-consumer/sca-consumer.iml" />
       <module fileurl="file://$PROJECT_DIR$/01-sca/sca-gateway/sca-gateway.iml" filepath="$PROJECT_DIR$/01-sca/sca-gateway/sca-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/01-sca/sca-provider/sca-provider.iml" filepath="$PROJECT_DIR$/01-sca/sca-provider/sca-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/01-sca/sca-ui/sca-ui.iml" filepath="$PROJECT_DIR$/01-sca/sca-ui/sca-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/sso-auth/sso-auth.iml" filepath="$PROJECT_DIR$/02-sso/sso-auth/sso-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/sso-gateway/sso-gateway.iml" filepath="$PROJECT_DIR$/02-sso/sso-gateway/sso-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/sso-resource/sso-resource.iml" filepath="$PROJECT_DIR$/02-sso/sso-resource/sso-resource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/sso-system/sso-system.iml" filepath="$PROJECT_DIR$/02-sso/sso-system/sso-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-sso/sso-ui/sso-ui.iml" filepath="$PROJECT_DIR$/02-sso/sso-ui/sso-ui.iml" />
     </modules>
   </component>
 </project>
