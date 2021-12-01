@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UserService {
     User selectUserByName(String username);
-    List<String> selectUserPermission(Long userId);
+    List<String> selectUserPermissions(Long userId);
 }

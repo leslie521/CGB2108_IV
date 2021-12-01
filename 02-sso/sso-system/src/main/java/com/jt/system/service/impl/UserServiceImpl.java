@@ -1,4 +1,4 @@
-package com.jt.system.service.Impl;
+package com.jt.system.service.impl;
 
 import com.jt.system.dao.UserMapper;
 import com.jt.system.pojo.User;
@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<String> selectUserPermission(Long userId) {
-        return userMapper.selectUserPermission(userId);
+    public List<String> selectUserPermissions(Long userId) {
+        return userMapper.selectUserPermissions(userId);
     }
 }

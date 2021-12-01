@@ -22,7 +22,7 @@ public class UserMapperTests {
 
     @Test
     void testSelectUserPermission(){
-        List<String> Permissions = userMapper.selectUserPermission(1L);
+        List<String> Permissions = userMapper.selectUserPermissions(1L);
         System.out.println(Permissions);
     }
 }

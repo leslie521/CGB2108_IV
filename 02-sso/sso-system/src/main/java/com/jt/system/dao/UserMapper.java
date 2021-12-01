@@ -32,5 +32,5 @@ public interface UserMapper extends BaseMapper<User> {
             "        join tb_menus m " +
             "            on rm.menu_id = m.id " +
             "where ur.user_id = #{userId}")
-    List<String> selectUserPermission(Long userId);
+    List<String> selectUserPermissions(Long userId);
 }

@@ -24,6 +24,6 @@ public class UserController {
 
     @GetMapping("/permission/{userId}")
     public List<String> doSelectUserPermissions(@PathVariable("userId") Long userId){
-        return userService.selectUserPermission(userId);
+        return userService.selectUserPermissions(userId);
     }
 }
