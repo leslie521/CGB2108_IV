@@ -14,3 +14,6 @@ spring:
     url: jdbc:mysql:///jt-sso?serverTimezone=Asia/Shanghai&characterEncoding=utf8
     username: root
     password: root
+logging:
+  level:
+    com.jt: debug #默认为Info
