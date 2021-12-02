@@ -2,6 +2,7 @@ package com.jt.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -22,7 +23,7 @@ public class TokenConfig {
      * @return
      */
     @Bean
-    public JwtTokenStore tokenConfig(){
+    public TokenStore tokenStore(){
         //这里采用JWT方式生成和存储令牌信息
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
@@ -32,6 +33,7 @@ public class TokenConfig {
      * 基于此对象创建的令牌信息会封装到OAuth2AccessToken类型的对象中
      * 然后再存储到TokenStore对象，外界需要时，会从tokenStore进行获取。
      */
+    @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter =
                 new JwtAccessTokenConverter();
