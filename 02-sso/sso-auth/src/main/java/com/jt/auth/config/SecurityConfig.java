@@ -6,10 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -77,6 +80,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             writeJsonToClient(response,map);
         };
     }
+
+    /*认证成功管理器返回的json串第二种方式，认证失败时同理*/
+//    private AuthenticationSuccessHandler successHandler(){
+//        return new AuthenticationSuccessHandler() {
+//            @Override
+//            public void onAuthenticationSuccess(
+//                    HttpServletRequest request,
+//                    HttpServletResponse response,
+//                    Authentication authentication) throws IOException, ServletException {
+//                Map<String,Object> map = new HashMap<>();
+//                map.put("status",200);
+//                map.put("message", "login ok");
+//                //将map对象转换为json格式字符串并写到客户端
+//                writeJsonToClient(response,map);
+//            }
+//        };
+//    }
 
     //定义登录失败处理器
     @Bean
