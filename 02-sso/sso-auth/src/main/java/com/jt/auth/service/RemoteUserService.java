@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
+/**
+ * 基于这个接口进行sso-system服务的调用
+ */
 @FeignClient(value = "sso-system",contextId = "remoteUserService")
 public interface RemoteUserService {
 

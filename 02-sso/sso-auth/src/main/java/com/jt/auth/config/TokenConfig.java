@@ -49,6 +49,7 @@ public class TokenConfig {
      * 1)生成的令牌需要这个密钥进行签名
      * 2)获取的令牌需要使用这个密钥进行验签(校验令牌合法性，是否被篡改过)
      */
+    //jwt令牌签名key(系统底层对令牌的header,payload部分进行签名时使用的key
     private static final String SIGNING_KEY = "auth";
 
 }

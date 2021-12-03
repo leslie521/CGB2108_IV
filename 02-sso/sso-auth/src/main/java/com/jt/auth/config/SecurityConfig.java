@@ -29,9 +29,9 @@ import java.util.Map;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /**
-     * 初始化加密对象
-     * 此对象提供了一种不可逆的加密方式,相对于md5方式会更加安全
-     * @return
+     * 构建加密算法对象，基于此算法对用户端输入的密码进行加密
+     * Client-->(username,password)
+     * Server-->(对未加密的密码进行加密然后与数据库已加密的密码进行比对)
      */
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
@@ -42,6 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      * 定义认证管理器对象，这个对象负责完成用户信息的认证，
      * 即判定用户身份信息的合法性，在基于oauth2协议完成认
      * 证时，需要此对象，所以这里讲此对象拿出来交给spring管理
+     * 目的是与后续oauth2协议进行整合。
      * @return
      * @throws Exception
      */
@@ -50,7 +51,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
-    /**配置认证规则*/
+    /**
+     * 配置认证规则(系统默认规则是所有资源必须先认证才能访问)
+     * 1)哪些请求必须认证，哪些请求无需认证
+     * 2)配置认证成功和失败处理
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //super.configure(http);//默认所有请求都要认证
@@ -63,6 +68,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()//这句话会对外暴露一个登录路径/login
                 .successHandler(successHandler())
                 .failureHandler(failureHandler());
+        // http.authorizeRequests()
+        //        .mvcMatchers("/default.html").authenticated()//认证
+        //        .anyRequest().permitAll();//其它都放行
+        //3.设置认证结果处理器(默认认证成功以后会跳转到一个index.html页面)
+        //formLogin方法执行后会创建一个/login路径
 
     }
 
