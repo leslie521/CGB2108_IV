@@ -25,4 +25,5 @@ public class UserMapperTests {
         List<String> Permissions = userMapper.selectUserPermissions(1L);
         System.out.println(Permissions);
     }
+
 }
