@@ -22,6 +22,8 @@ public class LogServiceImpl implements LogService {
     @Async
     @Override
     public void insertLog(Log log) {
+        System.out.println("LogServiceImpl.insertLog.threadName:"+
+                Thread.currentThread().getName());
         logMapper.insert(log);
     }
 }

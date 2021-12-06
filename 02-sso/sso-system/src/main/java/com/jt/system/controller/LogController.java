@@ -17,6 +17,8 @@ public class LogController {
 
     @PostMapping
     public void doInsertLog(@RequestBody Log log){
+        System.out.println("LogController.doInsertLog.threadName:"+
+                Thread.currentThread().getName());
         logService.insertLog(log);
     }
 }

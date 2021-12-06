@@ -7,7 +7,7 @@ import com.jt.system.pojo.Log;
  */
 public interface LogService {
     /**
-     * 保存用户行为日志.
+     * 向表中记录用户行为日志
      * @param log
      */
     void insertLog(Log log);
