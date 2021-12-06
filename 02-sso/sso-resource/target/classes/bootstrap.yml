@@ -1,0 +1,12 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: sso-resource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yml

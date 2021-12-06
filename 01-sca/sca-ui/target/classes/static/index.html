@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h2>The Index Page</h2>
+        <button onclick="doBuy()">抢购Buy</button>
+        <h1 id="app"></h1>
+    </div>
+    <!--
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    -->
+    <script src="/js/axios.min.js"></script>
+    <script>
+        // debugger //设置断点
+        //前端如何拍错(日志，debugger,排除)
+            function doBuy(){
+                console.log("===doBuy===")
+                //1.基于axios框架发送异步Ajax请求
+                //2.将响应结果更新到页面上
+                let url = "http://localhost:9000/nacos/provider/echo/axios request"
+                let h1 = document.getElementById("app")
+                axios.get(url)
+                     .then(function (response) {//请求ok，执行then
+                         // handle success
+                         //console.log(response)
+                         console.log(response.data);
+                         //2.将响应结果更新到页面上
+                         h1.innerHTML = response.data;
+                         if (response.data.status == 429){
+                             console.log(response.data.message);
+                             h1.innerHTML = response.data.message;
+                         }
+                     })
+                     .catch(function (error) {
+                         // handle error
+                         console.log(error)
+                         if (error.response.status == 403){
+                             console.log(error.data);
+                             h1.innerHTML = error.response.statusText;
+                         }
+                     })
+                     // .then(
+                     //     a => {
+                     //         console.log(a.data);
+                     //         document.getElementById("app").innerHTML = a.data;
+                     //     })
+            }
+
+    </script>
+</body>
+</html>
