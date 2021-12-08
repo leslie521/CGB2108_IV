@@ -13,6 +13,7 @@ public class CommonApplication {
         inter1.play();
         Runnable target = new MyRunnable();
         Thread t = new Thread(target);
+//        Runnable r = new Runnable();
 //        t.run();
         t.start();
 //        InterImpl inter = new InterImpl();
