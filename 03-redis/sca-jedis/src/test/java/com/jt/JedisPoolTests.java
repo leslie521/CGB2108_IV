@@ -21,4 +21,16 @@ public class JedisPoolTests {
         resource.close();
         jedisPool.close();
     }
+
+    @Test
+    public void testJedisPool02(){
+        //1.从池中获取一个连接对象(Jedis)
+        Jedis resource = JedisDataSource.getConnection();
+        //2.基于Jedis读写redis数据
+        resource.set("poolName", "JedisPool");
+        String poolName = resource.get("poolName");
+        System.out.println(poolName);
+        //3.释放资源
+        resource.close();
+    }
 }
