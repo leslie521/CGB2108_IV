@@ -10,6 +10,7 @@
         <module name="sca-provider" />
         <module name="sca-common" />
         <module name="sca-consumer" />
+        <module name="sca-jedis" />
         <module name="sca-ui" />
         <module name="sso-auth" />
         <module name="sso-gateway" />
@@ -17,15 +18,19 @@
         <module name="sca-gateway" />
         <module name="sso-resource" />
         <module name="sso-system" />
+        <module name="sca-template" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="01-sca" target="8" />
       <module name="02-sso" target="8" />
+      <module name="03-redis" target="8" />
       <module name="sca-common" target="8" />
       <module name="sca-consumer" target="8" />
       <module name="sca-gateway" target="8" />
+      <module name="sca-jedis" target="8" />
       <module name="sca-provider" target="8" />
+      <module name="sca-template" target="8" />
       <module name="sca-ui" target="8" />
       <module name="sso-auth" target="8" />
       <module name="sso-gateway" target="8" />

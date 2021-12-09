@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/01-sca/pom.xml" />
         <option value="$PROJECT_DIR$/02-sso/pom.xml" />
+        <option value="$PROJECT_DIR$/03-redis/pom.xml" />
       </list>
     </option>
   </component>
