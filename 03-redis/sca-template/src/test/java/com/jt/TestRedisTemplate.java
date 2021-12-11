@@ -27,9 +27,7 @@ public class TestRedisTemplate {
     @Test
     void testHashBlog(){
         ValueOperations ho = redisTemplate.opsForValue();
-        Blog blog = new Blog();
-        blog.setId(100);
-        blog.setName("andy");
+        Blog blog = new Blog(101,"blg");
         ho.set("blog", blog);
         blog =(Blog)ho.get("blog");
         System.out.println(blog);
