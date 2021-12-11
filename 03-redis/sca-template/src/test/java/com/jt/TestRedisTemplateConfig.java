@@ -13,6 +13,11 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 public class TestRedisTemplateConfig {
     @Autowired
     private RedisTemplate redisTemplate;
+
+    /**
+     * 将blog对象以json串的方式写到redis数据库，
+     * 并将其读出了进行输出
+     */
     @Test
     void testRedisConfig(){
 

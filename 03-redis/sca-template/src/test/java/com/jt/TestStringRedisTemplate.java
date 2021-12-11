@@ -18,13 +18,22 @@ import java.util.Set;
 @SpringBootTest
 public class TestStringRedisTemplate {
 
+    /**
+     * StringRedisTemplate是一个特殊的RedisTemplate对象，
+     * 只是默认序列化方式为string方式的序列化
+     */
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
+    /**
+     * 将blog对象以json串的方式写到redis数据库，
+     * 并将其读出了进行输出
+     */
     @Test
     void testBlogJson() {
 
         Blog blog = new Blog(101,"blg");
+        //2.将Blog对象以json方式写入到redis
         stringRedisTemplate.setValueSerializer(RedisSerializer.json());
         ValueOperations vo = stringRedisTemplate.opsForValue();
         vo.set("blog", blog);

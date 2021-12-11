@@ -45,16 +45,28 @@ public class TestRedisTemplate {
         System.out.println(blog);
     }
 
+    /**
+     * string类型数据读写操作
+     */
     @Test
     void testStringOper(){
+        //1.获取字符串操作对象
+        //假如需要改变默认序列化方式，可以采用如下设置方式进行实现
 //        redisTemplate.setKeySerializer(RedisSerializer.string());
 //        redisTemplate.setValueSerializer(RedisSerializer.string());
         ValueOperations<String,String> vo = redisTemplate.opsForValue();
 //        vo.set("id", 100, Duration.ofSeconds(10));
         vo.set("id", "100");
         Object id = vo.get("id");
-//        vo.increment("id");
+        //直接对已存在key递增会有ERR value is not an integer or out of range
+        //因为值已经采用了JDK默认的序列化方式进行了序列化存储
+        //假如一定要这样写，就是可以对已存在的key进行底层，可以修改默认序列化方式
+        //vo.increment("id");
+        //假如希望使用RedisTemplate对象直接实现递增操作，可以用一个不存在的key实现递增
+        //调用increment方法时，假如key不存在会自动创建key(会基于JDK方式序列化),但值不会JDK序列化
+        Long views = vo.increment("views");
         System.out.println(id);
+        System.out.println(views);
     }
 
     @Test
