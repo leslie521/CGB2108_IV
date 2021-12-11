@@ -32,7 +32,9 @@ public class TestStringRedisTemplate {
     @Test
     void testBlogJson() {
 
-        Blog blog = new Blog(101,"blg");
+        Blog blog = new Blog();
+        blog.setId(100);
+        blog.setName("hello world");
         //2.将Blog对象以json方式写入到redis
         stringRedisTemplate.setValueSerializer(RedisSerializer.json());
         ValueOperations vo = stringRedisTemplate.opsForValue();
