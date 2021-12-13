@@ -23,6 +23,7 @@ public class RedisConfig {
     /**
      * 自定义序列化规则，本次基于jackson api完成序列化和反序列化设计
      */
+    @Bean
     public RedisSerializer<Object> jsonSerializer(){
         //1.构建RedisSerializer对象(构建对象时，指定可以为哪些对象序列化)
         Jackson2JsonRedisSerializer serializer=//本次序列化方案基于jackson api进行实现

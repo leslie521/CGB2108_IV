@@ -2,3 +2,11 @@ spring:
   redis:
     host: 192.168.126.128
     port: 6379
+  datasource:
+    url: jdbc:mysql:///jt-sso?serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: root
+
+logging:
+  level:
+    com.jt: debug
